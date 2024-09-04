@@ -18,3 +18,10 @@ import './commands'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+beforeEach('Run before each test', ()=>{
+    Cypress.on('uncaught:exception',()=>{
+        return false
+    })
+    
+    cy.visit('/')
+})
